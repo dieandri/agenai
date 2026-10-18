@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - AI Try-On Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 AI Try-On Generator</h1>
+            <p>Gabungkan Foto Model & Foto Produk menggunakan Gemini + OpenAI</p>
+        </header>
+
+        <nav class="nav-links">
+            <a href="index.html" class="active">1. Upload & Analisis</a>
+            <a href="result.html">2. Hasil Generate</a>
+        </nav>
+
+        <main>
+            <!-- Panel API -->
+            <section class="panel">
+                <h2>🔑 Konfigurasi API</h2>
+                <div class="input-group">
+                    <label>Gemini API Key:</label>
+                    <input type="password" id="geminiKey" placeholder="Masukkan API Key Google AI Studio">
+                </div>
+                <div class="input-group">
+                    <label>OpenAI API Key:</label>
+                    <input type="password" id="openaiKey" placeholder="Masukkan API Key OpenAI (sk-...)">
+                </div>
+            </section>
+
+            <!-- Panel Upload -->
+            <section class="panel">
+                <h2>📸 Upload Bahan Konten</h2>
+                <div class="upload-grid">
+                    <div class="upload-box">
+                        <label for="modelImg">🧑 Foto Model</label>
+                        <input type="file" id="modelImg" accept="image/*">
+                        <img id="previewModel" class="preview" style="display:none;" alt="Preview Model">
+                    </div>
+                    <div class="upload-box">
+                        <label for="productImg">👕 Foto Produk</label>
+                        <input type="file" id="productImg" accept="image/*">
+                        <img id="previewProduct" class="preview" style="display:none;" alt="Preview Produk">
+                    </div>
+                </div>
+                <div class="input-group" style="margin-top: 20px;">
+                    <label for="narrationText">📝 Bahan Narasi / Script (Opsional):</label>
+                    <textarea id="narrationText" rows="3" placeholder="Ketik narasi video di sini..."></textarea>
+                </div>
+            </section>
+
+            <!-- Panel Aksi -->
+            <section class="panel">
+                <h2>✨ Mulai Proses</h2>
+                <div class="action-buttons">
+                    <button id="btnGenerate" class="btn-primary">🚀 Proses & Generate Gambar</button>
+                </div>
+                
+                <div id="statusArea" class="status hidden">
+                    <div class="spinner"></div>
+                    <p id="statusText">Memproses...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

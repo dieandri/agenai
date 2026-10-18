@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil - AI Try-On Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 AI Try-On Generator</h1>
+            <p>Hasil Gambar AI Anda</p>
+        </header>
+
+        <nav class="nav-links">
+            <a href="index.html">1. Upload & Analisis</a>
+            <a href="result.html" class="active">2. Hasil Generate</a>
+        </nav>
+
+        <main>
+            <section class="panel">
+                <h2>🖼️ Hasil Gambar</h2>
+                
+                <!-- Jika belum ada data -->
+                <div id="emptyState" style="text-align: center; padding: 40px;">
+                    <p>Belum ada gambar yang di-generate.</p>
+                    <br>
+                    <a href="index.html" class="btn-primary" style="text-decoration: none; display: inline-block; width: auto; padding: 10px 20px;">Kembali ke Halaman Upload</a>
+                </div>
+
+                <!-- Jika ada data -->
+                <div id="resultArea" class="result hidden">
+                    <img id="resultImage" src="" alt="Hasil AI">
+                    <button id="downloadBtn" class="btn-download">⬇️ Download Gambar (PNG)</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
